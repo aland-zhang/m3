@@ -164,7 +164,7 @@ func NewDatabase(
 	nsInit := opts.NamespaceInitializer()
 	nsReg, err := nsInit.Init()
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("database: namespace initialized failed: %v. make sure a namespace has been set")
 	}
 
 	// get a namespace watch
